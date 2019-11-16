@@ -1,0 +1,344 @@
+extends layout
+
+block content
+  h1 on traveler server
+  h2 auth
+  table(style='width:100%',  border='1')
+    tr
+      th action
+      th path
+      th description
+    tr
+      td GET
+      td auth/google/
+      td auth... with google
+  h2 buddeis
+  a(href='buddy.js') Buddy Schema
+  h4 Rest api
+  table(style='width:100%', border='1')
+    tr
+      th action
+      th path
+      th description
+    tr
+      td GET
+      td buddies/
+      td get all buddies
+    tr
+      td GET
+      td buddies/(buddy_id)
+      td get buddy who's id is same as buddy_id
+    tr
+      td GET
+      td buddies/location/(latitude,longitude)
+      td get buddy who active in location
+    tr
+      td POST
+      td buddies/
+      td make new buddy
+    tr
+      td PUT
+      td buddies/(buddy_id)
+      td update buddy
+    tr
+      td DELETE
+      td buddies/(buddy_id)
+      td delete buddy
+  h2 checklists
+  a(href='checklist.js') Checklist Schema
+  h4 Rest api
+  table(style='width=100%', border='1')
+    tr
+      th action
+      th path
+      th description
+    tr
+      td GET
+      td checklists/
+      td get all checklist
+    tr
+      td GET
+      td checklists/(checklist_id)
+      td get checklist that's id is same as checklist_id
+    tr
+      td GET
+      td checklists/customer/(customer_id)
+      td get checklist that's owner is customer who's id is customer_id
+    tr
+      td GET
+      td checklists/buddy/(buddy_id)
+      td get checklist that's receiver buddy who's id is buddy_id
+    tr
+      td GET
+      td checklists/date/(start_date, end_date)
+      td get checklists that's start_time greater or equal to start_date and end_time less or equal than end_time
+    tr
+      td POST
+      td checklists
+      td make checklist
+    tr
+      td PUT
+      td checklists/(checklist_id)
+      td update checklist
+    tr
+      td DELETE
+      td checklists/(cheklist_id)
+      td delete checklist
+  h2 customers
+  a(href='customer.js') Customer Schema
+  h4 Rest api
+  table(style='width=100%', border='1')
+    tr
+      th action
+      th path
+      th description
+    tr
+      td GET
+      td customers/
+      td get all customers
+    tr
+      td GET
+      td customers/(customer_id)
+      td get customer who's id is customer_id
+    tr
+      td POST
+      td customers/
+      td make customer
+    tr
+      td PUT
+      td customers/(customer_id)
+      td update customer
+    tr
+      td DELETE
+      td customers/(customer_id)
+      td delete customer
+  h2 favorite_buddies
+  a(href='favorite_buddy.js') favorite_buddy Schema
+  h4 Rest api
+  table(style='width=100%', border='1')
+    tr
+      th action
+      th path
+      th description
+    tr
+      td GET
+      td favorite_buddies/
+      td get all favorite_buddies
+    tr
+      td GET
+      td favorite_buddies/customer/(customer_id)
+      td get favorite_buddies who's customer's id is customer_id
+    tr
+      td GET
+      td favorite_buddies/buddy/(buddy_id)
+      td get favorite_buddies who's buddy's id is buddy_id
+    tr
+      td POST
+      td favorite_buddies/
+      td make favorite_buddies
+    tr
+      td PUT
+      td favorite_buddies/(favorite_buddy_id)
+      td update favorite_buddies
+    tr
+      td DELETE
+      td favorite_buddies/(favorite_buddy_id)
+      td delete favorite_buddies
+  h2 favorite_feeds
+  a(href='favorite_feed.js') favorite_feed Schema
+  h4 Rest api
+  table(style='width=100%', border='1')
+    tr
+      th action
+      th path
+      th description
+    tr
+      td GET
+      td favorite_feeds/
+      td get all favorite_feeds
+    tr
+      td GET
+      td favorite_feeds/customer/(customer_id)
+      td get favorite_feeds who's customer's id is customer_id
+    tr
+      td GET
+      td favorite_feeds/feed/(feed_id)
+      td get favorite_feeds who's feed's id is feed_id
+    tr
+      td POST
+      td favorite_feeds/
+      td make favorite_feeds
+    tr
+      td PUT
+      td favorite_feeds/(favorite_feed_id)
+      td update favorite_feeds
+    tr
+      td DELETE
+      td favorite_feeds/(favorite_feed_id)
+      td delete favorite_feeds
+  h2 feed_items
+  a(href='feed.js') feed_item Schema
+  h4 Rest api
+  table(style='width=100%', border='1')
+    tr
+      th action
+      th path
+      th description
+    tr
+      td GET
+      td feed_items/
+      td get all feed_items
+    tr
+      td GET
+      td feed_items/(feed_item_id)
+      td get feed_items who's  id is feed_item_id
+    tr
+      td GET
+      td feed_items/buddy/(buddy_id)
+      td get feed_items who's owner buddy's id is buddy_id
+    tr
+      td GET
+      td feed_items/hashtag/(hashtag_names)
+      td get feed_items that all have hashtag's
+    tr
+      td POST
+      td feed_items/
+      td make feed_items
+    tr
+      td PUT
+      td feed_items/(feed_item_id)
+      td update feed_items
+    tr
+      td DELETE
+      td feed_items/(feed_item_id)
+      td delete feed_items
+  h2 post_scripts
+  a(href='post_script.js') post_script Schema
+  h4 Rest api
+  table(style='width=100%', border='1')
+    tr
+      th action
+      th path
+      th description
+    tr
+      td GET
+      td post_scripts/
+      td get all post_scripts
+    tr
+      td GET
+      td post_scripts/customer/(customer_id)
+      td get post_scripts that's feed id is feed_item_id
+    tr
+      td GET
+      td post_scripts/buddy/(buddy_id)
+      td get post_scripts who's owner buddy's id is buddy_id
+    tr
+      td POST
+      td post_scripts/
+      td make post_scripts
+    tr
+      td PUT
+      td post_scripts/(post_script_id)
+      td update post_scripts
+    tr
+      td DELETE
+      td post_scripts/(post_script_id)
+      td delete post_scripts
+  h2 schedule_items
+  a(href='schedule.js') schedule Schema
+  h4 Rest api
+  table(style='width=100%', border='1')
+    tr
+      th action
+      th path
+      th description
+    tr
+      td GET
+      td schedule_items/
+      td get all schedule_items
+    tr
+      td GET
+      td schedule_items/(schedule_item_id)
+      td get schedule_items that's id is schedule_item_id
+    tr
+      td GET
+      td schedule_items/buddy/(buddy_id)
+      td get schedule_items who's owner buddy's id is buddy_id
+    tr
+      td POST
+      td schedule_items/
+      td make schedule_items
+    tr
+      td PUT
+      td schedule_items/(schedule_items_id)
+      td update schedule_items
+    tr
+      td DELETE
+      td schedule_items/(schedule_item_id)
+      td delete schedule_items
+  h2 Chattings
+  a(href='chatting.js') chatting Schema
+  h4 Rest api
+  table(style='width=100%', border='1')
+    tr
+      th action
+      th path
+      th description
+    tr
+      td GET
+      td chattings/
+      td get all chattings
+    tr
+      td GET
+      td chattings/(chatting_id)
+      td get chattings that's id is chatting_id
+    tr
+      td GET
+      td chattings/customer/(customer_id)
+      td get chattings who's owner customer's id is customer_id
+    tr
+      td GET
+      td chattings/buddy/(buddy_id)
+      td get chattings who's owner buddy's id is buddy_id
+    tr
+      td POST
+      td chattings/
+      td make chattings
+    tr
+      td PUT
+      td chattings/(chatting_id)
+      td update chattings
+    tr
+      td DELETE
+      td chattings/(chatting_id)
+      td delete chattings
+  h2 Profiles
+  a(href='profile.js') Profile Schema
+  h4 rest api
+  table(style='width=100%', border='1')
+    tr
+      th action
+      th path
+      th description
+    tr
+      td GET
+      td profiles/
+      td get all profiles
+    tr
+      td GET
+      td profiles/buddy/(buddy_id)
+      td get profiles who's owner buddy's id is buddy_id
+    tr
+      td POST
+      td profiles/
+      td make profiles
+    tr
+      td PUT
+      td profiles/(profile_id)
+      td update profiles
+    tr
+      td DELETE
+      td profiles/(profile_id)
+      td delete profiles
+
+
